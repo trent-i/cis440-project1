@@ -44,7 +44,7 @@ router.post('/', function (req, res) {
         returnedID = rows
     })
 
-    console.log(returnedID.userID);
+    res.redirect('/home')
 
 
 
