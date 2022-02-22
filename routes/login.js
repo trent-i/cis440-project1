@@ -11,6 +11,7 @@ var con = mysql.createConnection({
     database: 'sprog20223'
   });
 
+
 // router.post('/', function (req, res) {
 //     console.log("login attempted.")
 //     let isLoggedIn = false
@@ -45,9 +46,6 @@ router.post('/', function (req, res) {
     })
 
     res.redirect('/home')
-
-
-
 })
 
 

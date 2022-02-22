@@ -11,37 +11,11 @@ var con = mysql.createConnection({
     database: 'sprog20223'
   });
 
-// con.connect(function(err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-// });
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
 
-function handleDisconnect() {
-  con = mysql.createConnection({
-    host: "107.180.1.16",
-    user: "sprog20223",
-    password: "sprog20223",
-    database: 'sprog20223'
-  }); 
-
-  con.connect(function(err) {            
-    if(err) {                                    
-      console.log('error when connecting to db:', err);
-      setTimeout(handleDisconnect, 2000); 
-    }                                     
-  });                                     
-  
-  con.on('error', function(err) {
-    console.log('db error', err);
-    if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
-      handleDisconnect();                         
-    } else {                                      
-      throw err;                                  
-    }
-  });
-}
-
-handleDisconnect();
 
 router.get('/', function(req, res) {
     res.render('Create_Account')
