@@ -13,17 +13,17 @@ app.get("/", function(req, res) {
     res.render('index')
 })
 
-// var con = mysql.createConnection({
-//     host: "107.180.1.16",
-//     user: "sprog20223",
-//     password: "sprog20223",
-//     database: 'sprog20223'
-//   });
+var con = mysql.createConnection({
+    host: "107.180.1.16",
+    user: "sprog20223",
+    password: "sprog20223",
+    database: 'sprog20223'
+  });
 
-// con.connect(function(err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-// });
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
 
 app.use(cors());
 app.use(express.json());
