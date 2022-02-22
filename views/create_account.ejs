@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Create Acct Page-->
+        <title>Create Account</title>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link href="create_acct.css" rel="stylesheet">
+    </head>
+
+    <body onload="initialize()">
+        <!--Create Account-->
+
+        <!--Navigation Bar-->
+        <div class="centerPage">
+
+            <div class="createAccount">
+                <h1>Create Account</h1>
+           
+                <form id="createAccount" method="POST" action="/create_account">
+
+                    <!--First Name container-->
+                    <label>First Name: </label>
+                    <input type="firstName" name="firstName" id="firstName" required><br><br>
+
+                    <!--Last Name container-->
+                    <label>Last Name: </label>
+                    <input type="lastName" name="lastName" id="lastName" required><br><br>
+
+                    <!--E-mail container-->
+                    <label>E-mail: </label>
+                    <input type="email" name="email" id="email" required><br><br>
+
+                    <!--Password container-->
+                    <label>Password: </label>
+                    <input type="password" name="password" id="password" required><br><br>
+
+                    <!--Create Account-->
+                    <input type="submit" name="createAccount" id="createAccount" 
+                     onclick="createButton()" value="Create"><br><br>
+
+                </form>
+            </div>
+            <!-- the purpose of the following div is to show that our buttons do stuff when clicked -->
+        </div>
+
+        <div id="output">
+            <p>
+                <!-- Here is where it actually goes -->
+            </p>
+        </div>
+        
+        <!-- <script src="./database_connection.js"></script> -->
+        <script src="./index.js"></script>
+        
+    </body>
+</html>
