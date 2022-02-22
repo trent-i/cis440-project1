@@ -28,18 +28,25 @@ router.post('/', function (req, res) {
     console.log("login attempted.")
     let isLoggedIn = false
 
-    let email = req.body.username
-    let password = req.body.password
+    let email = req.body.username;
+    let password = req.body.password;
     let query = `SELECT userID FROM Users WHERE 
                  email = '${email}' AND 
                  password = '${password}' ;`
+    var returnedID;
 
     con.query(query, (err,rows) => {
         if(err) throw err;
 
         console.log('Data received from DB:');
         console.log(rows);
+        isLoggedIn = true;
+        returnedID = rows
     })
+
+    console.log(returnedID.userID);
+
+
 
 })
 
