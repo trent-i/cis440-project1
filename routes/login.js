@@ -36,15 +36,15 @@ router.post('/', function (req, res) {
                  password = '${password}' ;`
     var returnedID;
 
-    con.query(query, (err,rows) => {
+    con.query(query, (err,rows,fields) => {
         if(err) throw err;
 
         console.log('Data received from DB:');
         console.log(rows);
         isLoggedIn = true;
-        returnedID = rows
+        returnedID = rows[0].userID;
     })
-
+    console.log(returnedID);
     res.redirect('/home')
 })
 
