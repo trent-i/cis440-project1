@@ -56,9 +56,10 @@ router.post('/', function (req, res) {
         console.log('Data received from DB:');
         console.log(rows);
         getValuesFromQuery(rows);
+        res.render('home')
     })
-
     con.end();
+    
 })
 
 
