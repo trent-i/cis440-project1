@@ -11,6 +11,13 @@ var con = mysql.createConnection({
     database: 'sprog20223'
   });
 
+  function getValuesFromQuery (rows) {
+      var       values ;
+      values =  rows;
+      console.log(values);
+      return    rows;
+  }
+
 
 // router.post('/', function (req, res) {
 //     console.log("login attempted.")
@@ -26,6 +33,12 @@ var con = mysql.createConnection({
 // })
 
 router.post('/', function (req, res) {
+
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+    });
+
     console.log("login attempted.")
     let isLoggedIn = false
 
@@ -36,16 +49,16 @@ router.post('/', function (req, res) {
                  password = '${password}' ;`
     var returnedID;
 
-    con.query(query, (err,rows,fields) => {
-        if(err) throw err;
+    con.query(query, function selectAll(err,rows) {
+        if(err) {
+            throw err; }
 
         console.log('Data received from DB:');
         console.log(rows);
-        isLoggedIn = true;
-        returnedID = rows[0].userID;
+        getValuesFromQuery(rows);
     })
-    console.log(returnedID);
-    res.redirect('/home')
+
+    con.end();
 })
 
 

@@ -11,10 +11,10 @@ var con = mysql.createConnection({
     database: 'sprog20223'
   });
 
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-});
+// con.connect(function(err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+// });
 
 
 router.get('/', function(req, res) {
@@ -23,6 +23,12 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
     // console.log(req.body.firstName)
+    
+    con.connect(function(err) {
+      if (err) throw err;
+      console.log("Connected!");
+    });
+
     const data = req.body;
   
   let Fname    =  data.firstName
@@ -43,6 +49,8 @@ router.post('/', function(req, res) {
     console.log(rows);
     res.json(rows)
   });
+
+  con.end();
 
 })
 

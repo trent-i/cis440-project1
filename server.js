@@ -20,10 +20,10 @@ var con = mysql.createConnection({
     database: 'sprog20223'
   });
 
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-});
+// con.connect(function(err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+// });
 
 app.use(cors());
 app.use(express.json());
