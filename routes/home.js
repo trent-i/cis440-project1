@@ -6,10 +6,8 @@ const router = express.Router()
 
 router.get("/", function(req, res) {
     res.render("home")
+    console.log('directed user to homepage.')
 })
 
-router.get('/:userId', function(req, res) {
-    
-})
 
 module.exports = router

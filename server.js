@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
 
 app.get("/", function(req, res) {
-    console.log("connected.")
+    console.log("app loaded successfully.")
     res.render('index')
 })
 

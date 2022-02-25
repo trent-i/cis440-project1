@@ -32,36 +32,69 @@ var con = mysql.createConnection({
 //     }
 // })
 
+// router.post('/', function (req, res) {
+
+//     con.connect(function(err) {
+//         if (err) throw err;
+//         console.log("Connected!");
+//     });
+
+//     console.log("login attempted.")
+//     let isLoggedIn = false
+
+//     let email = req.body.username;
+//     let password = req.body.password;
+//     let query = `SELECT userID FROM Users WHERE 
+//                  email = '${email}' AND 
+//                  password = '${password}' ;`
+//     var returnedID;
+
+//     con.query(query, function selectAll(err,rows) {
+//         if(err) {
+//             throw err; }
+
+//         console.log('Data received from DB:');
+//         console.log(rows);
+//         getValuesFromQuery(rows);
+//         // res.render('home')
+//     })
+//     res.redirect('home');
+//     con.end();
+    
+// })
+
+
+
+var returnedUserID;
+
 router.post('/', function (req, res) {
 
-    con.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected!");
-    });
+    var email = req.body.username;
+    var password = req.body.password;
+    var returnedUserID; 
 
-    console.log("login attempted.")
-    let isLoggedIn = false
-
-    let email = req.body.username;
-    let password = req.body.password;
-    let query = `SELECT userID FROM Users WHERE 
+    function getUserID(email, password, callback) {
+        con.query(`SELECT * FROM Users WHERE 
                  email = '${email}' AND 
-                 password = '${password}' ;`
-    var returnedID;
+                        password = '${password}' ;`, function (err, result) {
+            if (err) {
+                callback(err, null)
+            } else callback(null, result)
 
-    con.query(query, function selectAll(err,rows) {
-        if(err) {
-            throw err; }
-
-        console.log('Data received from DB:');
-        console.log(rows);
-        getValuesFromQuery(rows);
-        // res.render('home')
     })
-    res.redirect('home');
-    con.end();
+    }
     
+    getUserID(email, password, function(err, data) {
+        if (err) {
+            console.log("ERROR: ", err)
+        } else {
+            returnedUserID = data[0].UserID
+            console.log(`user: ${email} logged in`)
+            res.redirect(`home?userid=${returnedUserID}`);
+        }
 })
 
+    con.end();
+})
 
 module.exports = router
