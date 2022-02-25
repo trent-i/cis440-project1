@@ -31,10 +31,14 @@ app.use(express.json());
 const homeRouter = require('./routes/home')
 const createAccountRouter = require('./routes/create_account')
 const loginRouter = require('./routes/login')
+const walkRouter = require('./routes/start_walk')
+const addPetRouter = require('./routes/add_pet')
 
 app.use('/home', homeRouter)
 app.use('/create_account', createAccountRouter)
 app.use('/login', loginRouter)
+app.use('/start_walk', walkRouter)
+app.use('/add_pet', addPetRouter)
 
 app.listen(3000)
 

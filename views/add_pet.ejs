@@ -5,7 +5,7 @@
         <title>Add Pet Page</title>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-        <link href="add_pet_page.css" rel="stylesheet">
+        <link href="add_pet.css" rel="stylesheet">
     </head>
 
     <body>
@@ -15,7 +15,7 @@
                 <p class="txt">
                     Would you like to add a pet?
                 </p>
-                <form method="POST" action="action-page.php">
+                <form method="POST" action="/add_pet">
                     <!--Add Pet-->
                     <label class="txt">Pet Name: </label>
                     <input type="petName" name="petName" id="petName" required>
@@ -28,8 +28,10 @@
                     <input type="checkbox" id="chkFemale" name="chkFemale" value="Female">
                     <label for="chkMale">Male</label>
                     <input type="checkbox" id="chkMale" name="chkMale" value="Male"><br><br>
-                    <button type="addPet" name="addPet" id="addPet">Add Pet</button>
+
+                    <button type="submit" name="addPet" id="addPet">Add Pet</button>
                 </form>
+                <br><br></be><a href="/home">Go Home</a>
             </div>
         </div>
         <!--Home Page-->    

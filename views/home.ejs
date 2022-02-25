@@ -5,7 +5,7 @@
         <title>Add Pet Page</title>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
-        <link href="add_pet_page.css" rel="stylesheet">
+        <link href="home.css" rel="stylesheet">
     </head>
 
         <!--Home Page--> 
@@ -15,9 +15,11 @@
                 <h1>Welcome </h1>
                 <form method="POST" action="action-page.php">
                     <!--Add Pet-->
-                    <button type="addPet" name="addPet" id="addPet">Add Pet</button><br><br>
-                    <button type="walk" name="walk" id="walk">Go on A Walkt</button><br><br>
-                    <button type="oldWalk" name="oldWalk" id="oldWalk">Old Walks</button>
+                    <button type="addPet" name="addPet" id="addPet"><a href="/add_pet">Add Pet</a></button><br><br>
+                    <a href="/start_walk">Go on A Walk</a><br><br>
+                    <!-- <button type="walk" name="walk" id="walk"><a href="/start_walk">Go on A Walk</a></button><br><br> -->
+                    <a href="/old_walks">Old Walks</a>
+                    <!-- <button type="oldWalk" name="oldWalk" id="oldWalk">Old Walks</button> -->
                     <table>
                         <tr>
                             <td>Name</td>
