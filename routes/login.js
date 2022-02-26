@@ -11,12 +11,12 @@ var con = mysql.createConnection({
     database: 'sprog20223'
   });
 
-  function getValuesFromQuery (rows) {
-      var       values ;
-      values =  rows;
-      console.log(values);
-      return    rows;
-  }
+//   function getValuesFromQuery (rows) {
+//       var       values ;
+//       values =  rows;
+//       console.log(values);
+//       return    rows;
+//   }
 
 
 // router.post('/', function (req, res) {
