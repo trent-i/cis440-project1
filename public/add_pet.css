@@ -19,7 +19,7 @@ h1 {
     margin: 5px 0px 0px 0px
 }
 
-#addPet {
+#addPet, #walk, #oldWalk {
     padding: 15px 32%;
     cursor: pointer;
     text-transform: uppercase;
