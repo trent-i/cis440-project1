@@ -13,18 +13,18 @@
         <div class="centerpage">
              <div class="createpet">
                 <h1>Welcome </h1>
-                <form method="POST" action="action-page.php">
+                <form method="POST" action="">
                     <!--Add Pet-->
-                    <button type="addPet" name="addPet" id="addPet"><a href="/add_pet">Add Pet</a></button><br><br>
+                    <a  name="addPet" id="addPet" href="/add_pet">Add Pet</a><br><br>
                     <a href="/start_walk">Go on A Walk</a><br><br>
                     <!-- <button type="walk" name="walk" id="walk"><a href="/start_walk">Go on A Walk</a></button><br><br> -->
                     <a href="/old_walks">Old Walks</a>
                     <!-- <button type="oldWalk" name="oldWalk" id="oldWalk">Old Walks</button> -->
-                    <table>
+                    <table id="table">
                         <tr>
-                            <td>Name</td>
-                            <td><button type="edit" name="edit" id="edit">Edit</button></td><br><br>
-                            <td><button type="delete" name="delete" id="delete">Delete</button></td><br><br>
+                            <!-- <td>Pet Names</td> -->
+                            <!-- <td><button type="edit" name="edit" id="edit">Edit</button></td><br><br> -->
+                            <!-- <td><button type="delete" name="delete" id="delete">Delete</button></td><br><br> -->
                         </tr>
                     </table>
                 </form>
@@ -35,7 +35,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <%= pet0 %>
+                                <%= pet0 %> 
                             </td>
                         </tr>
                     </table>

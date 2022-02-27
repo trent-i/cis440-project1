@@ -5,10 +5,126 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-       
-       /* Still need to edit CSS for this webpage */
 
+* {
+  box-sizing: border-box;
+  /* font-size: 24px; */
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)) no-repeat;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.center_page {
+    height: 100vh;
+    /* margin: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+.wrapper {
+  overflow: hidden;
+  padding: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 3px 12px 28px -3px rgba(0, 0, 0, 0.45);
+  min-width: 400px;
+}
+
+#timerDisplay, h1, .buttons {
+    text-align: center;
+}
+
+.timerDisplay {
+    /* position: relative; */
+    /* width: 92%; */
+    background: #ffffff;
+    /* left: 4%; */
+    /* padding: 40px 0; */
+    font-family: 'Roboto mono', monospace;
+    color: black;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+            /* box-shadow: 0 0 20px rgba(0, 139, 253, 0.25); */
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    /* display: inline-block; */
+    text-align: center;
+    /* width: 100%; */
+
+}
+
+button {
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 0 0.5rem 0 0.5rem;
+    background-color: #D5D5F5;
+    /* border: 0.5px solid black; */
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.45);
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 100%;
+        }
+
+a {
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.centerText {
+    text-align: center;
+}
+
+/* .buttons {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .buttons button {
+            width: 120px;
+            height: 45px;
+            background-color: black;
+            color: #ffffff;
+            border: none;
+            font-family: 'Kumbh Sans', sans-serif;
+            font-size: 18px;
+            border-radius: 5px;
+            outline: none;
+            margin-right: 1rem;
+        } */
+
+
+       /* Still need to edit CSS for this webpage */
+/* 
         body {
             background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)) no-repeat;
             font-family: 'Kumbh Sans', sans-serif;
@@ -65,65 +181,68 @@
             justify-content: space-around;
             border-radius: 5px;
             box-shadow: 0 0 20px rgba(0, 139, 253, 0.25);
-        }
+        } */
     </style>
     <title>Start A Walk</title>
 </head>
 
 <body>
     <div class="center_page">
-        <h1>Go On A Walk</h1><br>
+        <div class="wrapper">
+            
+            <h1>Go On A Walk</h1><br>
+            
+            <div class="timerDisplay" id="timerDisplay">
+                00:00:00
+            </div><br>
+            
+            <div class="buttons">
+                <button type="start" name="start" id="start" onclick="start(true)">Start</button>
+                <button type="stop" name="stop" id="stop" onclick="stop()">Stop</button>
+                <button type="reset" name="reset" id="reset" onclick="reset()">Reset</button>
+            </div><br><br>
 
-        <div class="timerDisplay" id="timerDisplay">
-            00 : 00 : 00 : 000
-        </div><br>
-
-        <div class="buttons">
-            <button type="start" name="start" id="start" onclick="start(true)">Start</button>
-            <button type="stop" name="stop" id="stop" onclick="stop()">Stop</button>
-            <button type="reset" name="reset" id="reset" onclick="reset()">Reset</button>
-        </div><br><br>
-
-        <table>
-            <tr>
-                <td>Name</td>
-                <td>Pee</td>
-                <td>Poo</td>
-            </tr>
-            <tr>
-                <!-- Will contain the names referenced from the database -->
-                <td></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-            </tr>
-        </table><br>
-
-        <h2>Time: </h2>
-
-        <br><br></be><a href="/home">Go Home</a>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td class="centerText" >Pee</td>
+                    <td class="centerText" >Poo</td>
+                </tr>
+                <tr>
+                    <!-- Will contain the names referenced from the database -->
+                    <td>Rex</td>
+                    <td class="centerText"><input  type="checkbox"></td>
+                    <td class="centerText"><input type="checkbox"></td>
+                </tr>
+            </table><br>
+            
+            <h2>Time: </h2>
+            
+            <br><br></be><a href="/home">Go Home</a>
+        </div>
     </div>
-
-    <script>
+        
+        <script>
         var stopwatch = document.getElementById("timerDisplay");
         var startBtn = document.getElementById("start");
         var timeoutId = null;
         var ms = 0;
         var sec = 0;
         var min = 0;
- 
+        
         /* function to start stopwatch */
         function start(flag) {
             if (flag) {
                 startBtn.disabled = true;
             }
- 
+            
             timeoutId = setTimeout(function() {
                 ms = parseInt(ms);
                 sec = parseInt(sec);
                 min = parseInt(min);
- 
+                
                 ms++;
- 
+                
                 if (ms == 100) {
                     sec = sec + 1;
                     ms = 0;
@@ -141,7 +260,7 @@
                 if (min < 10) {
                     min = '0' + min;
                 }
- 
+                
                 stopwatch.innerHTML = min + ':' + sec + ':' + ms;
  
                 // calling start() function recursivly to continue stopwatch

@@ -5,12 +5,18 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+
 h1 {
     text-align: center;
     orientation: top;
 }
 
-#petName {
+
+input[type="text"],
+input[type="number"] {
+    display: block;
+    /* background-color: #D5D5F5; */
+    color: black;
     width: 100%;
     height: 30px;
     text-align: left;
@@ -19,8 +25,20 @@ h1 {
     margin: 5px 0px 0px 0px
 }
 
+
+
+#petName {
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    border: solid, 3px;
+    border-radius: 3px;
+    margin: 5px 0px 15px 0px
+}
+
 #addPet, #walk, #oldWalk {
-    padding: 15px 32%;
+    width: 100%;
+    padding: 10px;
     cursor: pointer;
     text-transform: uppercase;
     text-align: center;
@@ -33,7 +51,7 @@ h1 {
 
 .centerpage {
     height: 100vh;
-    margin: 50px;
+    /* margin: 50px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +65,16 @@ h1 {
     box-shadow: 3px 12px 28px -3px rgba(0,0,0,0.45);
 }
 
+.chkLabel {
+    margin-left: 10px;
+
+}
+
 .txt {
     text-align: center;
 }
+
+a {
+    text-decoration: none;
+}
+

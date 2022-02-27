@@ -18,15 +18,15 @@
                 <form method="POST" action="/add_pet">
                     <!--Add Pet-->
                     <label class="txt">Pet Name: </label>
-                    <input type="petName" name="petName" id="petName" required>
+                    <input type="text" name="petName" id="petName" required>
                     <label class="txt">Breed: </label><br>
-                    <input type="breed" name="breed" id="breed" required><br>
+                    <input type="text" name="breed" id="breed" required><br>
                     <label for="age">Age: </label><br>
                     <input type="number" id="age" name="age" min="1" max="99"><br>
                     <label for="gender">Gender: </label><br>
                     <label for="chkFemale">Female</label>
                     <input type="checkbox" id="chkFemale" name="chkFemale" value="Female">
-                    <label for="chkMale">Male</label>
+                    <label for="chkMale" class="chkLabel">Male</label>
                     <input type="checkbox" id="chkMale" name="chkMale" value="Male"><br><br>
 
                     <button type="submit" name="addPet" id="addPet">Add Pet</button>
