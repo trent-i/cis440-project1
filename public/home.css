@@ -37,6 +37,10 @@ a {
     color: black;
 }
 
+a:hover {
+    box-shadow: 3px 12px 28px -3px rgba(0,0,0,0.25);
+}
+
 .centerpage {
     height: 100vh;
     /* margin: 50px; */

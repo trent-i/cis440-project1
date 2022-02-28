@@ -22,7 +22,8 @@ input[type="number"] {
     text-align: left;
     border: solid, 3px;
     border-radius: 3px;
-    margin: 5px 0px 0px 0px
+    margin: 5px 0px 0px 0px;
+    
 }
 
 
@@ -48,6 +49,8 @@ input[type="number"] {
     font-size: 18px;
     margin: 5px;
 }
+
+
 
 .centerpage {
     height: 100vh;
@@ -78,3 +81,11 @@ a {
     text-decoration: none;
 }
 
+button {
+    background-color: #D5D5F5;
+}
+
+button:hover {
+    box-shadow: 3px 12px 28px -3px rgba(0,0,0,0.25);
+    
+}

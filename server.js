@@ -33,12 +33,14 @@ const createAccountRouter = require('./routes/create_account')
 const loginRouter = require('./routes/login')
 const walkRouter = require('./routes/start_walk')
 const addPetRouter = require('./routes/add_pet')
+const oldWalkRouter = require('./routes/old_walks')
 
 app.use('/home', homeRouter)
 app.use('/create_account', createAccountRouter)
 app.use('/login', loginRouter)
 app.use('/start_walk', walkRouter)
 app.use('/add_pet', addPetRouter)
+app.use('/old_walks', oldWalkRouter)
 
 app.listen(3000)
 
